@@ -1,0 +1,1 @@
+This folder for Hardware Abstraction Layer (HAL) or Electronic Unit Abstraction Layer (ECUAL) 
