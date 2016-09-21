@@ -1,5 +1,5 @@
 /*
- * TIMER.h
+ * TIMER0.h
  *
  * Created: 2/14/2016 3:31:37 PM
  *  Author: En_Ahmed Rg Shwy
@@ -16,11 +16,6 @@
 #define TRUE_CLKmode(clkmode)		(clkmode>=0x00 && clkmode<=0x07)
 #define TRUE_INTmode(INTmode)		(INTmode>=0x00&&INTmode<=0x03)
 #define TRUE_COMPARE(cmpval)		(cmpval>0x00&&cmpval<0xff)
-
-/*#define TRUE_TIMER0(T0md,INT,OC0,clkmd,cmpval)		( (()||\
-													   ()&&  &&\
-													    &&  )*/
-
 
 /* TIMER MODE */
 #define NORMAL_TIMER0	0x00
