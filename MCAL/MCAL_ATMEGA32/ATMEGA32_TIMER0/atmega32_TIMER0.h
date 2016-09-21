@@ -17,11 +17,6 @@
 #define TRUE_INTmode(INTmode)		(INTmode>=0x00&&INTmode<=0x03)
 #define TRUE_COMPARE(cmpval)		(cmpval>0x00&&cmpval<0xff)
 
-/*#define TRUE_TIMER0(T0md,INT,OC0,clkmd,cmpval)		( (()||\
-													   ()&&  &&\
-													    &&  )*/
-
-
 /* TIMER MODE */
 #define NORMAL_TIMER0	0x00
 #define CTC_TIMER0		0x08
