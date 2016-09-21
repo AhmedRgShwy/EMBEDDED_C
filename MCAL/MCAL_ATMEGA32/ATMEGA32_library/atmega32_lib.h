@@ -170,6 +170,7 @@ typedef unsigned long U32;
 */
 #define I 7
 
+#define Active_Global_INT()	SET_BIT(SREG,I)
 /*
 			       ***********************************
 ******************************** Interrupts, External Interrupts.*************************************
