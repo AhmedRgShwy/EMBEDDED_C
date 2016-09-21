@@ -1,5 +1,5 @@
 /*
- * TIMER.h
+ * TIMER0.h
  *
  * Created: 2/14/2016 3:31:37 PM
  *  Author: En_Ahmed Rg Shwy
