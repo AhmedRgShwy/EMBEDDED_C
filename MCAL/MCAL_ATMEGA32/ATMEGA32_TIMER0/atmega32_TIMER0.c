@@ -6,7 +6,7 @@
  */ 
 
 
-#include "TIMER.h"
+#include "atmega32_TIMER0.h"
 
 
 static void ( *overflowExecution )( void );
