@@ -2,7 +2,7 @@
  * TIMER.c
  *
  * Created: 9/21/2016 7:25:02 PM
- *  Author: Ahmed Ragab Shaarawy
+ * Author: Ahmed Ragab Shaarawy
  */ 
 
 
