@@ -13,18 +13,18 @@
 #include <avr/interrupt.h>
 
 #define TC0_IS_TRUE(mode,OC0,clk,INT,comp,TC0val)	( TC0_TRUE_OC0(mode,OC0)&&TC0_TRUE_CLK(clk)&&TC0_TRUE_INT(INT)&&\
-														TC0_TRUE_COMPARE(comp)&&(TC0val>=0x00&&TC0val<=0xff) )
+								TC0_TRUE_COMPARE(comp)&&(TC0val>=0x00&&TC0val<=0xff) )
 
 #define TC0_TRUE_COMPARE(cmpval)		(cmpval>0x00&&cmpval<0xff)
 
 											   
 
 /* TIMER0 MODE */
-#define TC0_NORMAL_MODE				0x00
-#define TC0_CTC						0x08
-#define TC0_FASTPWM					0x48
-#define TC0_PWMPHASE				0x40
-#define TC0_TRUE_MODE(mode)			(mode==TC0_NORMAL_MODE||mode==TC0_CTC||mode==TC0_FASTPWM||mode==TC0_PWMPHASE)
+#define TC0_NORMAL_MODE			0x00
+#define TC0_CTC				0x08
+#define TC0_FASTPWM			0x48
+#define TC0_PWMPHASE			0x40
+#define TC0_TRUE_MODE(mode)		(mode==TC0_NORMAL_MODE||mode==TC0_CTC||mode==TC0_FASTPWM||mode==TC0_PWMPHASE)
 #define TC0_MODE_IS_NONPWM(mode)	(mode==TC0_NORMAL_MODE||mode==TC0_CTC)
 #define TC0_MODE_IS_PWM(mode)		(mode==TC0_FASTPWM||mode==TC0_PWMPHASE)
 
@@ -32,7 +32,7 @@
 #define TC0_OC0_DISABLE				0x00
 #define TC0_OC0_TOGGLE				0x01
 #define TC0_OC0_CLEAR				0x02
-#define TC0_OC0_SET					0x03
+#define TC0_OC0_SET				0x03
 #define TC0_OC0_NONPWM(mode,OC0)	(TC0_TRUE_MODE(mode)&&OC0>=TC0_OC0_TOGGLE&&OC0<=TC0_OC0_SET)
 
 /* PWM OC0 MODE */
@@ -56,12 +56,12 @@
 */
 #define TC0_DISABLE_CLK				0x00
 #define TC0_NO_CLKPRESCALE			0x01
-#define TC0_TC1_CLKPRESCALE_8		0x02
-#define TC0_TC1_CLKPRESCALE_64		0x03
-#define TC0_TC1_CLKPRESCALE_256		0x04
-#define TC0_TC1_CLKPRESCALE_1024	0x05
-#define TC0_EXTCLK_T0T1PINS_FALLE	0x06
-#define TC0_EXTCLK_T0T1PINS_RISEE	0x07
+#define TC0_TC1_CLKPRESCALE_8			0x02
+#define TC0_TC1_CLKPRESCALE_64			0x03
+#define TC0_TC1_CLKPRESCALE_256			0x04
+#define TC0_TC1_CLKPRESCALE_1024		0x05
+#define TC0_EXTCLK_T0T1PINS_FALLE		0x06
+#define TC0_EXTCLK_T0T1PINS_RISEE		0x07
 #define TC0_TRUE_CLK(clk)			(clk>=TC0_DISABLE_CLK&&clk<=TC0_EXTCLK_RISEE)
 
 #define TC0_TC1_Prescaler_Reset()	SET_BIT(SFIOR,PSR10)
