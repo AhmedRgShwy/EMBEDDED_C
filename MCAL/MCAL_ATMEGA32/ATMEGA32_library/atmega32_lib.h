@@ -104,6 +104,11 @@ typedef unsigned long U32;
 #define PIN_ADC0	0
 
 
+#define SET_PIN(basePort,pin)		PORT(basePort)|=(1<<pin)
+#define CLR_PIN(basePort,pin)		PORT(basePort)&=~(1<<pin)
+#define READ_PIN(basePort,pin)		((PIN(basePort)&(1<<pin))>>pin)
+#define TOGGLE_PIN(basePort,pin)	PORT(basePort)^=(1<<pin)
+
 #define SET_BIT(reg,pin)		reg|=(1<<pin)
 #define CLR_BIT(reg,pin)		reg&=~(1<<pin)
 #define READ_BIT(reg,pin)		((reg&(1<<pin))>>pin)
@@ -170,7 +175,7 @@ typedef unsigned long U32;
 */
 #define I 7
 
-#define Active_Global_INT()	SET_BIT(SREG,I)
+#define Gi()  SET_BIT(SREG,I)
 /*
 			       ***********************************
 ******************************** Interrupts, External Interrupts.*************************************
