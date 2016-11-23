@@ -13,6 +13,9 @@
 */
 
 
+void (*PassTo_ISR_TXC)(void);
+void (*PassTo_ISR_RXC)(void);
+void (*PassTo_ISR_UDRE)(void);
 
 U8 USARTInti(sUSART *ur)
 {
@@ -35,6 +38,9 @@ U8 USARTInti(sUSART *ur)
 			case UR_CHARSIZE_9:
 				UCSRB |= 1<<UCSZ2;	UCSRC |= (1<<UCSZ0)|(1<<UCSZ1);			break;
 		}
+		ur->PassToTXCVector= PassTo_ISR_TXC;
+		ur->PassToRXCVector= PassTo_ISR_RXC;
+		ur->PassToUDREVector= PassTo_ISR_UDRE;
 		// Baud Rate at UBRRL & UBRRH
 		if( !READ_BIT(UCSRA,U2X) && !READ_BIT(UCSRC,UMSEL) )
 			UBRR_val= ( ur->MCU_Freq/(16*ur->BuadRate) ) - 1 ;		// when Asynchronous and U2X is normal speed as = zero.
@@ -78,4 +84,18 @@ U8 USARTRx(U16 *RxData)
 		check= 0x00;							// check = 0
 	*RxData= UDR| ((READ_BIT(UCSRB,RXB8)<<8)) ;	// read the UDR with the ninth bit in UCSRB
 	return check ;
+}
+
+
+ISR(USART_TXC_vect)
+{
+	PassTo_ISR_TXC();
+}
+ISR(USART_RXC_vect)
+{
+	PassTo_ISR_RXC();
+}
+ISR(USART_UDRE_vect)
+{
+	PassTo_ISR_UDRE();
 }

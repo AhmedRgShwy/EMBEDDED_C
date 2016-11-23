@@ -9,6 +9,7 @@
 #ifndef ATMEGA32_UART_H_
 #define ATMEGA32_UART_H_
 #include "atmega32_IO.h"
+#include <avr/interrupt.h>
 
 
 
@@ -81,9 +82,9 @@
 #define UR_TRUE_BAUDE(ba)		(ba>=2400&&ba<=250000)
 
 #define UR_TRUE_USART_OBJECT(asy,xck,mpc,Ds,Int,prty,Cha,stp,trx,Brate)		UR_TRUE_SYNC_ASYNC(asy)&&USR_TRUE_XCK(xck)&&UR_TRUE_MPCM(mpc)&&\
-										UAR_TRUE_DSPEED(Ds)&&UR_TRUE_INT(Int)&&UR_TRUE_PARITY(prty)&&\
-										UR_TRUE_CHAR(Cha)&&UR_TRUE_STOPBITS(stp)&&UR_TRUE_TRX(trx)&&\
-										UR_TRUE_BAUDE(Brate)
+																			UAR_TRUE_DSPEED(Ds)&&UR_TRUE_INT(Int)&&UR_TRUE_PARITY(prty)&&\
+																			UR_TRUE_CHAR(Cha)&&UR_TRUE_STOPBITS(stp)&&UR_TRUE_TRX(trx)&&\
+																			UR_TRUE_BAUDE(Brate)
 
 /************************************************************************/
 
@@ -104,6 +105,9 @@ typedef struct
 	U8 StopBitsNum;
 	U16 BuadRate;
 	U32 MCU_Freq;
+	void (*PassToTXCVector)(void);
+	void (*PassToRXCVector)(void);
+	void (*PassToUDREVector)(void);
 	}sUSART;
 
 
@@ -113,6 +117,8 @@ typedef struct
 U8 USARTInti(sUSART *ur);
 U8 USARTTx(U16 data);
 U8 USARTRx(U16 *RxData);
+
+//U8 USART_Init(void);
 
 
 
