@@ -21,7 +21,7 @@
 **
 **  >> HOW TO CALCULATE A FUNCTION'S TIME ?
 **
-** (1) You mast call StartTimer(ID) function immediatly befor the function you want to calculate it's time.
+** (1) You must call StartTimer(ID) function immediatly befor the function you want to calculate it's time.
 ** (2) After calling the desired function you must call GetTimerCounts(...) function immediatly to get the counts.
 ** (3) Use the counts to calculate function time from our equation explained above.
 ** (4) Call StopTimer() if you done.

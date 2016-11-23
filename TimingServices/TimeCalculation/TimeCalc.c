@@ -25,6 +25,7 @@ STD_R StartTimer(U8 TimerId)
 	switch(TimerId)
 	{
 		case TC0ID:
+			TC0_DisableOutPin();
 			TC0_SetTimerNormalMode();
 			TC0_EnableOVFInt();
 			TC0_SetTimerPrescaleClk();
