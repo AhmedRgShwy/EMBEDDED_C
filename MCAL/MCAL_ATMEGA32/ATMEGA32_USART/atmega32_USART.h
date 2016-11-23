@@ -114,8 +114,6 @@ U8 USARTInti(sUSART *ur);
 U8 USARTTx(U16 data);
 U8 USARTRx(U16 *RxData);
 
-//U8 USART_Init(void);
-
 
 
 #endif /* ATMEGA32_UART_H_ */
