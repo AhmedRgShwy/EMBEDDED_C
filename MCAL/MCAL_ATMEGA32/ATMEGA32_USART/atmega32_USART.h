@@ -81,9 +81,9 @@
 #define UR_TRUE_BAUDE(ba)		(ba>=2400&&ba<=250000)
 
 #define UR_TRUE_USART_OBJECT(asy,xck,mpc,Ds,Int,prty,Cha,stp,trx,Brate)		UR_TRUE_SYNC_ASYNC(asy)&&USR_TRUE_XCK(xck)&&UR_TRUE_MPCM(mpc)&&\
-																			UAR_TRUE_DSPEED(Ds)&&UR_TRUE_INT(Int)&&UR_TRUE_PARITY(prty)&&\
-																			UR_TRUE_CHAR(Cha)&&UR_TRUE_STOPBITS(stp)&&UR_TRUE_TRX(trx)&&\
-																			UR_TRUE_BAUDE(Brate)
+										UAR_TRUE_DSPEED(Ds)&&UR_TRUE_INT(Int)&&UR_TRUE_PARITY(prty)&&\
+										UR_TRUE_CHAR(Cha)&&UR_TRUE_STOPBITS(stp)&&UR_TRUE_TRX(trx)&&\
+										UR_TRUE_BAUDE(Brate)
 
 /************************************************************************/
 
