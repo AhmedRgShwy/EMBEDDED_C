@@ -17,7 +17,7 @@ U8 ADCInit( sADC *adc)
 		check= 0x01;
 		ADMUX   = 0;	ADCSRA  = 0;
 		ADMUX  |= (adc->Vref<<REFS0)|(adc->Channel)|(adc->ResultAdjust<<ADLAR) ;
-		ADCSRA |= (adc->TriggerMode<<ADATE)|(adc->Prescale)|(1<<ADEN);
+		ADCSRA |= (adc->TriggerMode<<ADATE)|(adc->Prescale)|(adc->INTMode<<ADIE)|(1<<ADEN);
 		PassToADC_ISR= adc->pfPassToADCIntVect;
 		if ( READ_BIT(ADCSRA,ADATE) )
 			SFIOR |= adc->AutoTriggerSource<<ADTS0;
