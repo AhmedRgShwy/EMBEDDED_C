@@ -88,6 +88,9 @@ typedef enum{
 #define ADC_TRUE_OJBECT(vr,Int,adj,trg,pre,src,cha)		ADC_TRUE_VREF(vr)&&ADC_TRUE_INT(Int)&&ADC_TRUE_ADJUST(adj)&&ADC_TRUE_CHANNEL(cha)&&\
 								ADC_TRUE_TRIGGER(trg)&&ADC_TRUE_SCALE(pre)&&ADC_TRUE_SOURCE(src)
 
+#define DisableADC()	CLR_BIT(ADCSRA,ADEN);
+#define DisableADCInt()	CLR_BIT(ADCSRA,ADIE);
+
 typedef struct
 {
 	U8					Vref;
