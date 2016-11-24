@@ -84,9 +84,9 @@ typedef enum{
 	singleVBG122V=30,
 	singleGND0V=31
 } eChannelGain_Sel;
-#define ADC_TRUE_CHANNEL(cha)							(cha>=0x00&&cha<=0x31)
-#define ADC_TRUE_OJECT(vr,Int,adj,trg,pre,src,cha)		ADC_TRUE_VREF(vr)&&ADC_TRUE_INT(Int)&&ADC_TRUE_ADJUST(adj)&&ADC_TRUE_CHANNEL(cha)&&\
-														ADC_TRUE_TRIGGER(trg)&&ADC_TRUE_SCALE(pre)&&ADC_TRUE_SOURCE(src)
+#define ADC_TRUE_CHANNEL(cha)					(cha>=0x00&&cha<=0x31)
+#define ADC_TRUE_OJBECT(vr,Int,adj,trg,pre,src,cha)		ADC_TRUE_VREF(vr)&&ADC_TRUE_INT(Int)&&ADC_TRUE_ADJUST(adj)&&ADC_TRUE_CHANNEL(cha)&&\
+								ADC_TRUE_TRIGGER(trg)&&ADC_TRUE_SCALE(pre)&&ADC_TRUE_SOURCE(src)
 
 typedef struct
 {
