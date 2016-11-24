@@ -12,7 +12,7 @@ void (*PassToADC_ISR)(void);
 U8 ADCInit( sADC *adc)
 {
 	U8 check= 0x00;
-	if (ADC_TRUE_OJECT(adc->Vref,adc->INTMode,adc->ResultAdjust,adc->TriggerMode,adc->Prescale,adc->AutoTriggerSource,adc->Channel))
+	if (ADC_TRUE_OBJECT(adc->Vref,adc->INTMode,adc->ResultAdjust,adc->TriggerMode,adc->Prescale,adc->AutoTriggerSource,adc->Channel))
 	{
 		check= 0x01;
 		ADMUX   = 0;	ADCSRA  = 0;
