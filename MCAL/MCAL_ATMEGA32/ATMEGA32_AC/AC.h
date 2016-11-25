@@ -46,7 +46,7 @@
 #define AC_TRUE_ACMUX_CH(mxc)	(mxc>=0x00&&mxc<=0x07)
 
 #define AC_TRUE_OBJECT(Int,iadj,bg,tr,mxm,mxc)		AC_TRUE_INT(Int)&&AC_TRUE_INT_ADJUST(iadj)&&AC_TRUE_BANDGAB(bg)&&\
-													AC_TRUE_TRIGGER_TC1(tr)&&AC_TRUE_ACMUX_MD(mxm)&&AC_TRUE_ACMUX_CH(mxc)
+							AC_TRUE_TRIGGER_TC1(tr)&&AC_TRUE_ACMUX_MD(mxm)&&AC_TRUE_ACMUX_CH(mxc)
 
 
 #define ACDisablePower()	SET_BIT(ACSR,ACD)
